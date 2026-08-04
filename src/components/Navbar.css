@@ -1,0 +1,217 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  background-color: transparent;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Estado visible: en scroll, hover (PC) o menú móvil abierto */
+.navbar--solid {
+  background-color: var(--primary-main);
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.15);
+}
+
+.navbar__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1.1rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar__logo {
+  font-family: "Fraunces", serif;
+  font-weight: 600;
+  font-size: 1.4rem;
+  color: var(--color-light);
+}
+
+/* ===== Menú de escritorio ===== */
+.navbar__links--desktop {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar__links--desktop>li>a,
+.navbar__dropdown-trigger {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--color-light);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 12px;
+}
+
+.navbar__links--desktop>li>a:hover,
+.navbar__dropdown-trigger:hover {
+  background: var(--color-light);
+  color: var(--primary-main);
+}
+
+/* Dropdown "¿Cómo ayudar?" — se despliega con hover en PC */
+.navbar__dropdown {
+  position: relative;
+}
+
+.navbar__dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(8px);
+  min-width: 180px;
+  margin: 0;
+  padding: 0.5rem;
+  list-style: none;
+  background: var(--primary-main);
+  border-radius: 12px;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
+}
+
+.navbar__dropdown:hover .navbar__dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(4px);
+}
+
+.navbar__dropdown-menu li a {
+  display: block;
+  padding: 0.6rem 0.9rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  color: var(--color-light);
+}
+
+.navbar__dropdown-menu li a:hover {
+  background: var(--color-light);
+  color: var(--secondary-main);
+}
+
+/* ===== Botón hamburguesa (móvil/tablet) ===== */
+.navbar__burger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+}
+
+.navbar__burger span {
+  width: 24px;
+  height: 2px;
+  background: var(--color-light);
+  border-radius: 2px;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.navbar--mobile-open .navbar__burger span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.navbar--mobile-open .navbar__burger span:nth-child(2) {
+  opacity: 0;
+}
+
+.navbar--mobile-open .navbar__burger span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* ===== Menú móvil/tablet: click en vez de hover ===== */
+.navbar__mobile-menu {
+  max-height: 0;
+  overflow: hidden;
+  background: var(--primary-main);
+  transition: max-height 0.3s ease;
+}
+
+.navbar--mobile-open .navbar__mobile-menu {
+  max-height: 600px;
+}
+
+.navbar__mobile-menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0.5rem 1.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.navbar__mobile-menu>ul>li>a,
+.navbar__mobile-help-trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 1.05rem;
+  color: var(--color-light);
+  background: none;
+  border: none;
+  border-bottom: 1px solid var(--color-light);
+  padding: 0.9rem 0;
+  text-align: left;
+  cursor: pointer;
+}
+
+.navbar__chevron {
+  width: 8px;
+  height: 8px;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: rotate(45deg);
+  transition: transform 0.2s ease;
+}
+
+.navbar__chevron--open {
+  transform: rotate(-135deg);
+}
+
+.navbar__mobile-submenu {
+  list-style: none;
+  margin: 0;
+  padding: 0 0 0.5rem 1rem !important;
+  display: flex;
+  flex-direction: column;
+  gap: 0 !important;
+}
+
+.navbar__mobile-submenu a {
+  padding: 0.6rem 0 !important;
+  font-size: 0.95rem;
+
+  color: var(--color-light);
+  border-bottom: none !important;
+}
+
+/* ===== Breakpoints: tablets y móviles usan hamburguesa ===== */
+@media (max-width: 1024px) {
+  .navbar__links--desktop {
+    display: none;
+  }
+
+  .navbar__burger {
+    display: flex;
+  }
+}
+
+@media (min-width: 1025px) {
+  .navbar__mobile-menu {
+    display: none;
+  }
+}

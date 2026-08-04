@@ -1,0 +1,32 @@
+import React from "react";
+import StatsCounter from "./StatsCounter";
+import CatCarousel from "./CatCarousel";
+
+export default function RescueSection() {
+  return (
+    <section className="section rescue" id="rescate">
+      <section id="rescute_content">
+        <div className="section__header">
+          <p className="eyebrow">Nuestra Labor</p>
+          <h2 className="section__title">Números que se sienten en cada cola feliz</h2>
+        </div>
+
+        <div className="stats">
+          <StatsCounter value={10} label="gatitos esperando hogar" />
+          <StatsCounter value={50} label="gatitos en su nuevo hogar" suffix="+" />
+          <StatsCounter value={9} label="Años salvando vidas" />
+        </div>
+
+        <div className="rescue__carousel-header">
+          <h3>Buscan un hogar</h3>
+          <a href="/adopciones" className="link-arrow">
+            Ver todos los adoptables →
+          </a>
+        </div>
+
+        <CatCarousel />
+      </section>
+
+    </section>
+  );
+}
