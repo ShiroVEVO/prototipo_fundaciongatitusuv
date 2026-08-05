@@ -10,7 +10,7 @@ export default function HelpCard({ image, title, href, titlePosition }) {
       {titlePosition === "top" && <span className="help-card__title">{title}</span>}
 
       <div className="help-card__image-wrap">
-        <img src={image} alt="" className="help-card__image" loading="lazy" />
+        <img src={import.meta.env.BASE_URL + image} alt="" className="help-card__image" loading="lazy" />
       </div>
 
       {titlePosition === "bottom" && <span className="help-card__title">{title}</span>}

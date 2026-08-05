@@ -5,25 +5,25 @@ const WAYS_TO_HELP = [
   {
     title: "Hogar de paso",
     href: "/hogar-de-paso",
-    image: `${import.meta.env.BASE_URL}img/TransitionalShelter.jpg`,
+    image: `img/TransitionalShelter.jpg`,
     titlePosition: "top",
   },
   {
     title: "Voluntariado",
     href: "/voluntariado",
-    image: `${import.meta.env.BASE_URL}img/Volunteering.jpg`,
+    image: `img/Volunteering.jpg`,
     titlePosition: "bottom",
   },
   {
     title: "Donaciones",
     href: "/donar",
-    image: `${import.meta.env.BASE_URL}img/Donation.jpg`,
+    image: `img/Donation.jpg`,
     titlePosition: "top",
   },
   {
     title: "Apadrinar",
     href: "/apadrinar",
-    image: `${import.meta.env.BASE_URL}img/Sponsorship.jpg`,
+    image: `img/Sponsorship.jpg`,
     titlePosition: "bottom",
   },
 ];

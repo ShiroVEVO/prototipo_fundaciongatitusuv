@@ -5,8 +5,8 @@ import React from "react";
  * Muestra un video en loop (con imagen de respaldo si el navegador no puede reproducirlo
  * o mientras carga).
  */
-const VIDEO_SRC = "././public/video/videoplayback.mp4";
-const POSTER_SRC = "././public/img/backgroundExample.jpg";
+const VIDEO_SRC = "video/videoplayback.mp4";
+const POSTER_SRC = "img/backgroundExample.jpg";
 
 export default function Hero() {
   return (
@@ -17,9 +17,9 @@ export default function Hero() {
         muted
         loop
         playsInline
-        poster={POSTER_SRC}
+        poster={import.meta.env.BASE_URL + POSTER_SRC}
       >
-        <source src={VIDEO_SRC} type="video/mp4" />
+        <source src={import.meta.env.BASE_URL + VIDEO_SRC} type="video/mp4" />
       </video>
 
       <div className="hero__overlay" aria-hidden="true" />
