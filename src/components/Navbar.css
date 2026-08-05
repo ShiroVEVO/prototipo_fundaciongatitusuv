@@ -24,7 +24,7 @@
 }
 
 .navbar__logo {
-  font-family: "Fraunces", serif;
+  font-family: var(--font-titles-body);
   font-weight: 600;
   font-size: 1.4rem;
   color: var(--color-light);
@@ -42,7 +42,7 @@
 
 .navbar__links--desktop>li>a,
 .navbar__dropdown-trigger {
-  font-family: "Plus Jakarta Sans", sans-serif;
+  font-family: var(--font-body);
   font-size: 0.95rem;
   font-weight: 500;
   color: var(--color-light);
@@ -158,7 +158,7 @@
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  font-family: "Plus Jakarta Sans", sans-serif;
+  font-family: var(--font-body);
   font-size: 1.05rem;
   color: var(--color-light);
   background: none;
