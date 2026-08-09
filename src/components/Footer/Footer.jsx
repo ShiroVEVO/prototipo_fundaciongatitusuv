@@ -1,4 +1,9 @@
-import React from "react";
+import { Link } from "react-router-dom";
+
+import "./Footer.css";
+
+import LOGO_SRC from "../../data/logoUbication";
+import SOCIALS from "../../data/socials";
 
 const NAV_LINKS = [
   { label: "Adopciones", href: "#rescate" },
@@ -10,17 +15,11 @@ const NAV_LINKS = [
   { label: "Apadrinar", href: "/apadrinar" },
 ];
 
-const SOCIALS = [
-  { label: "Instagram", href: "https://www.instagram.com/gatitusuv/" },
-  { label: "Facebook", href: "https://www.facebook.com/gatitusuv" },
-  { label: "TikTok", href: "https://www.tiktok.com/@fundaciongatitusuv" },
-];
-
 export default function Footer() {
   return (
     <footer className="footer">
       <div className="footer__brand">
-        <span className="footer__logo">Fundación Gatitus UV</span>
+        <img id="footer_logoFundacion" src={import.meta.env.BASE_URL + LOGO_SRC} alt="Fundación Gatitus UV" />
         <p>Refugio y catfeteria. Bogotá, Colombia.</p>
       </div>
 
@@ -29,7 +28,7 @@ export default function Footer() {
         <ul>
           {NAV_LINKS.map((link) => (
             <li key={link.label}>
-              <a href={link.href}>{link.label}</a>
+              <Link to={link.href}>{link.label}</Link>
             </li>
           ))}
         </ul>
@@ -67,7 +66,8 @@ export default function Footer() {
 
       <div className="footer__bottom">
         <span>© {new Date().getFullYear()} Fundación Gatitus uv. Todos los derechos reservados.</span>
-        <span>Designed and powered by Shirovevo</span>
+        <span>Designed and powered by </span>
+        <a href="https://github.com/ShiroVEVO" target="_blank" rel="noreferrer">Shirovevo</a>
       </div>
     </footer>
   );

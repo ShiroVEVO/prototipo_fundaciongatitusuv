@@ -1,21 +1,21 @@
 import React from "react";
-import Hero from "./components/Hero";
-import RescueSection from "./components/RescueSection";
-import CafeSection from "./components/CafeSection";
-import HelpSection from "./components/HelpSection";
-import Footer from "./components/Footer";
-import Navbar from "./components/Navbar";
 import "./index.css";
+import LadingPage from "./Pages/LandingPage.jsx";
+import AboutUsPage from "./Pages/AboutUsPage.jsx";
+import ContactUsPage from "./Pages/ContactUsPage.jsx";
+import { HashRouter, Route, Routes } from "react-router-dom";
 
 export default function App() {
   return (
-    <div className="app">
-      <Navbar />
-      <Hero />
-      <RescueSection />
-      <CafeSection />
-      <HelpSection />
-      <Footer />
-    </div>
+    <HashRouter>
+      <Routes>
+        <Route path="/" element={<LadingPage />} />
+        <Route path="/nosotros" element={<AboutUsPage />} />
+        <Route path="/contacto" element={<ContactUsPage />} />
+        {/* <Route path="/catfeteria" element={<CatfeteriaPage/>} />
+        <Route path="/ayudar" element={<HelpPage/>}/>
+        */}
+      </Routes>
+    </HashRouter>
   );
 }

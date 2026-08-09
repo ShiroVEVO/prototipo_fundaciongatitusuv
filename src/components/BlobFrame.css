@@ -1,0 +1,23 @@
+/* aspect-ratio garantiza que el marco tenga alto real aunque el
+   contenedor padre no defina una altura explícita (a diferencia de usar
+   height: 90% sobre un padre con altura automática, que colapsa a 0). */
+.blob-frame {
+    position: relative;
+    width: 100%;
+    max-width: 1000px;
+}
+
+.blob-frame__content {
+    width: 100%;
+    height: 100%;
+}
+
+.blob-frame__content>iframe,
+.blob-frame__content>img,
+.blob-frame__content>video {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    object-fit: cover;
+}

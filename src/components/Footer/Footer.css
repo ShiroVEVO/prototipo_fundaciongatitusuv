@@ -1,0 +1,68 @@
+.footer {
+    background: var(--secondary-main);
+    border-top: 1px solid var(--primary-main);
+    padding: 4rem 1.5rem 2rem;
+    display: grid;
+    grid-template-columns: 1.4fr repeat(3, 1fr);
+    gap: 2.5rem;
+    margin: 0 auto;
+}
+
+.footer__logo {
+    font-family: var(--font-body);
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: var(--color-light);
+}
+
+.footer__brand p {
+    color: var(--color-light);
+    font-size: 0.9rem;
+    margin-top: 0.75rem;
+}
+
+.footer h4 {
+    font-family: var(--font-body);
+    font-size: 0.78rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-light);
+    margin: 0 0 1rem;
+}
+
+.footer ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+.footer ul li {
+    color: var(--color-light);
+    font-size: 0.9rem;
+    padding: 0 0.5rem 0 0.5rem;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.footer ul li:hover {
+    color: var(--primary-main);
+    background: var(--color-light);
+    color: var(--primary-main);
+}
+
+.footer__bottom {
+    grid-column: 1 / -1;
+    margin-top: 2.5rem;
+    padding-top: 1.5rem;
+    font-size: 0.8rem;
+    text-align: center;
+    color: var(--color-light);
+}
+
+#footer_logoFundacion {
+    width: 200px;
+    height: auto;
+}

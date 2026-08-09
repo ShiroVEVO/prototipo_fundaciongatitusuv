@@ -3,15 +3,9 @@ import HelpCard from "./HelpCard";
 
 const WAYS_TO_HELP = [
   {
-    title: "Hogar de paso",
-    href: "/hogar-de-paso",
-    image: `img/TransitionalShelter.jpg`,
-    titlePosition: "top",
-  },
-  {
-    title: "Voluntariado",
-    href: "/voluntariado",
-    image: `img/Volunteering.jpg`,
+    title: "Apadrinar",
+    href: "/apadrinar",
+    image: `img/Sponsorship.jpg`,
     titlePosition: "bottom",
   },
   {
@@ -21,11 +15,17 @@ const WAYS_TO_HELP = [
     titlePosition: "top",
   },
   {
-    title: "Apadrinar",
-    href: "/apadrinar",
-    image: `img/Sponsorship.jpg`,
+    title: "Voluntariado",
+    href: "/voluntariado",
+    image: `img/Volunteering.jpg`,
     titlePosition: "bottom",
   },
+  {
+    title: "Hogar de paso",
+    href: "/hogar-de-paso",
+    image: `img/TransitionalShelter.jpg`,
+    titlePosition: "top",
+  }
 ];
 
 export default function HelpSection() {

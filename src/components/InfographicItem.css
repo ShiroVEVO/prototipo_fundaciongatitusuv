@@ -1,0 +1,108 @@
+/* Franja a 100% de ancho de pantalla (full-bleed), sin importar el padding
+   del contenedor padre donde se use el componente. */
+.infographic-item {
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+    background: var(--color-light);
+}
+
+/* El contenido real solo ocupa el 70% del ancho de pantalla, centrado */
+.infographic-item__inner {
+    width: 70%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 3.5rem;
+    padding: 2.5rem 0;
+}
+
+/* direction="left": imagen a la izquierda, texto a la derecha (orden normal) */
+.infographic-item--left .infographic-item__inner {
+    flex-direction: row;
+}
+
+/* direction="right": imagen a la derecha, texto a la izquierda (orden invertido) */
+.infographic-item--right .infographic-item__inner {
+    flex-direction: row-reverse;
+}
+
+/* Imagen y texto ocupan cada uno exactamente la mitad del contenedor del 70%,
+   por lo que el texto nunca puede ser más ancho que la imagen. */
+.infographic-item__image-wrap,
+.infographic-item__text-wrap {
+    flex: 1 1 50%;
+    min-width: 0;
+    /* evita que el texto largo desborde su mitad */
+}
+
+.infographic-item__image {
+    width: 100%;
+    height: 100%;
+    max-height: 350px;
+    object-fit: cover;
+    border-radius: var(--radius-md);
+    display: block;
+}
+
+.infographic-item__text-wrap {
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+}
+
+/* El texto se justifica hacia el lado donde está la imagen */
+.infographic-item--left .infographic-item__text-wrap {
+    align-items: flex-start;
+    text-align: left;
+}
+
+.infographic-item--right .infographic-item__text-wrap {
+    align-items: flex-end;
+    text-align: right;
+}
+
+.infographic-item__title {
+    font-family: var(--font-titles-body);
+    font-weight: 600;
+    font-size: clamp(1.4rem, 2.4vw, 2rem);
+    line-height: 1.25;
+    margin: 0 0 1rem;
+    max-width: 100%;
+    color: var(--color-dark);
+}
+
+.infographic-item__body {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    line-height: 1.65;
+    color: var(--cream-200);
+    margin: 0;
+    max-width: 100%;
+}
+
+/* En pantallas pequeñas se apila: imagen arriba, texto abajo, siempre alineado a la izquierda */
+@media (max-width: 768px) {
+    .infographic-item__inner {
+        width: 88%;
+        flex-direction: column !important;
+        gap: 1.75rem;
+        padding: 3rem 0;
+    }
+
+    .infographic-item__image-wrap,
+    .infographic-item__text-wrap {
+        flex: 1 1 auto;
+        width: 100%;
+    }
+
+    .infographic-item__image {
+        max-height: 280px;
+    }
+
+    .infographic-item--left .infographic-item__text-wrap,
+    .infographic-item--right .infographic-item__text-wrap {
+        align-items: flex-start;
+        text-align: left;
+    }
+}

@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 import "./Navbar.css";
+import LOGO_SRC from "../../data/logoUbication";
 
 const HELP_OPTIONS = [
   { label: "Adopta", href: "/adopta" },
@@ -9,19 +11,25 @@ const HELP_OPTIONS = [
 ];
 
 export default function Navbar() {
+  const location = useLocation();
+  // Ajusta esta condición si tu landing no vive en "/"
+  const isLandingPage = location.pathname === "/";
+
   const [isScrolled, setIsScrolled] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
   const [isMobileOpen, setIsMobileOpen] = useState(false);
   const [isHelpOpenMobile, setIsHelpOpenMobile] = useState(false);
 
-  // Se hace visible al hacer scroll
+  // Se hace visible al hacer scroll (solo aplica en la landing)
   useEffect(() => {
+    if (!isLandingPage) return;
+
     function onScroll() {
       setIsScrolled(window.scrollY > 40);
     }
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+  }, [isLandingPage]);
 
   // Si el usuario agranda la ventana a escritorio, cierra el menú móvil abierto
   useEffect(() => {
@@ -35,30 +43,39 @@ export default function Navbar() {
     return () => window.removeEventListener("resize", onResize);
   }, []);
 
-  // Visible (sólida) si se hizo scroll, si está en hover (PC) o si el menú móvil está abierto
-  const isSolid = isScrolled || isHovered || isMobileOpen;
+  // Al entrar/salir de la landing, resetea los estados que ya no aplican
+  useEffect(() => {
+    if (!isLandingPage) {
+      setIsScrolled(false);
+      setIsHovered(false);
+    }
+  }, [isLandingPage]);
+
+  // En la landing: sólida si hubo scroll, hover (PC) o el menú móvil está abierto.
+  // Fuera de la landing: siempre sólida (verde), sin importar scroll/hover.
+  const isSolid = isLandingPage ? isScrolled || isHovered || isMobileOpen : true;
 
   return (
     <nav
       className={`navbar ${isSolid ? "navbar--solid" : ""} ${isMobileOpen ? "navbar--mobile-open" : ""
         }`}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
+      onMouseEnter={() => isLandingPage && setIsHovered(true)}
+      onMouseLeave={() => isLandingPage && setIsHovered(false)}
     >
       <div className="navbar__inner">
-        <a href="#inicio" className="navbar__logo">
-          logofundaciongatitusuv
-        </a>
+        <Link to="/" className="navbar__logo">
+          <img id="navbar_logoFundacion" src={import.meta.env.BASE_URL + LOGO_SRC} alt="Fundación Gatitus UV" />
+        </Link>
 
         {/* Menú de escritorio (con dropdown por hover) */}
         <ul className="navbar__links navbar__links--desktop">
           <li>
-            <a href="#inicio">Inicio</a>
+            <Link className="NavBarReferences" to="/">Inicio</Link>
           </li>
           <li>
-            <a href="#cafeteria">Catfetería</a>
+            <Link className="NavBarReferences" to="/catfeteria">Catfetería</Link>
           </li>
-          <li className="navbar__dropdown">
+          <li className="navbar__dropdown"> {/*FALTA ADAPTAR A ANCLAS EN LA PESTAÑA DE AYUDA*/}
             <button type="button" className="navbar__dropdown-trigger">
               ¿Cómo ayudar?
             </button>
@@ -71,10 +88,10 @@ export default function Navbar() {
             </ul>
           </li>
           <li>
-            <a href="#nosotros">Nosotros</a>
+            <Link className="NavBarReferences" to="/nosotros">Nosotros</Link>
           </li>
           <li>
-            <a href="#contacto">Contacto</a>
+            <Link className="NavBarReferences" to="/contacto">Contacto</Link>
           </li>
         </ul>
 
@@ -96,14 +113,10 @@ export default function Navbar() {
       <div className="navbar__mobile-menu">
         <ul>
           <li>
-            <a href="#inicio" onClick={() => setIsMobileOpen(false)}>
-              Inicio
-            </a>
+            <Link className="NavBarReferences" to="/" onClick={() => setIsMobileOpen(false)}>Inicio</Link>
           </li>
           <li>
-            <a href="#cafeteria" onClick={() => setIsMobileOpen(false)}>
-              Catfetería
-            </a>
+            <Link className="NavBarReferences" to="/catfeteria" onClick={() => setIsMobileOpen(false)}>Catfetería</Link>
           </li>
           <li className="navbar__mobile-help">
             <button
@@ -118,7 +131,7 @@ export default function Navbar() {
                   }`}
               />
             </button>
-            {isHelpOpenMobile && (
+            {isHelpOpenMobile && ( /*FALTA ADAPTAR A ANCLAS EN LA PESTAÑA DE AYUDA*/
               <ul className="navbar__mobile-submenu">
                 {HELP_OPTIONS.map((opt) => (
                   <li key={opt.label}>
@@ -131,14 +144,10 @@ export default function Navbar() {
             )}
           </li>
           <li>
-            <a href="#nosotros" onClick={() => setIsMobileOpen(false)}>
-              Nosotros
-            </a>
+            <Link className="NavBarReferences" to="/nosotros" onClick={() => setIsMobileOpen(false)}>Nosotros</Link>
           </li>
           <li>
-            <a href="#contacto" onClick={() => setIsMobileOpen(false)}>
-              Contacto
-            </a>
+            <Link className="NavBarReferences" to="/contacto" onClick={() => setIsMobileOpen(false)}>Contacto</Link>
           </li>
         </ul>
       </div>
