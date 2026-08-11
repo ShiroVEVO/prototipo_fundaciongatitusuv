@@ -3,6 +3,7 @@ import "./index.css";
 import LadingPage from "./Pages/LandingPage.jsx";
 import AboutUsPage from "./Pages/AboutUsPage.jsx";
 import ContactUsPage from "./Pages/ContactUsPage.jsx";
+import CatfeteriaPage from "./Pages/CatfeteriaPage.jsx";
 import { HashRouter, Route, Routes } from "react-router-dom";
 
 export default function App() {
@@ -12,7 +13,8 @@ export default function App() {
         <Route path="/" element={<LadingPage />} />
         <Route path="/nosotros" element={<AboutUsPage />} />
         <Route path="/contacto" element={<ContactUsPage />} />
-        {/* <Route path="/catfeteria" element={<CatfeteriaPage/>} />
+        <Route path="/catfeteria" element={<CatfeteriaPage />} />
+        {/* 
         <Route path="/ayudar" element={<HelpPage/>}/>
         */}
       </Routes>

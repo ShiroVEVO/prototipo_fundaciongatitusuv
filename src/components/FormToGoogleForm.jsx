@@ -6,7 +6,8 @@ import "./FormToGoogleForm.css";
  * ============ CONFIGURACIÓN DE ENVÍO DE CORREO (EmailJS) ============
  * Como este formulario no tiene backend propio, usamos EmailJS: un
  * servicio que permite enviar correos reales directamente desde el
- * navegador. Es gratis hasta cierto volumen mensual.
+ * navegador. (Es gratis hasta cierto volumen mensual y porque la conexión
+ * con el google forms no sirvió, ya no existe la opción de prerellenar".
  *
  * 1. Instala el paquete:  npm install @emailjs/browser
  * 2. Crea una cuenta en https://www.emailjs.com/

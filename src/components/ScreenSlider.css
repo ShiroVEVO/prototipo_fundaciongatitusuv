@@ -1,0 +1,202 @@
+.fss {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background: #0a0a0a;
+    font-family: "Helvetica Neue", Arial, sans-serif;
+}
+
+.fss__slide {
+    position: absolute;
+    inset: 0;
+    margin: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 1.1s ease;
+}
+
+.fss__slide.is-active {
+    opacity: 1;
+    visibility: visible;
+    z-index: 1;
+}
+
+.fss__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transform: scale(1.06);
+    transition: transform 7s ease-out;
+}
+
+.fss__slide.is-active .fss__img {
+    transform: scale(1);
+}
+
+.fss__scrim {
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(0deg, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0) 32%),
+        linear-gradient(180deg, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0) 22%);
+}
+
+.fss__caption {
+    position: absolute;
+    max-width: min(640px, 80vw);
+    color: #f4f1ea;
+    margin: 0;
+}
+
+.fss__caption--center {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.fss__caption--bottom-left {
+    left: clamp(20px, 5vw, 64px);
+    bottom: clamp(90px, 12vh, 140px);
+    text-align: left;
+}
+
+.fss__caption--bottom-right {
+    right: clamp(20px, 5vw, 64px);
+    bottom: clamp(90px, 12vh, 140px);
+    text-align: right;
+}
+
+.fss__title {
+    font-family: Georgia, "Times New Roman", serif;
+    font-weight: 400;
+    font-size: clamp(1.8rem, 4vw, 3.2rem);
+    line-height: 1.05;
+    margin: 0 0 10px;
+    letter-spacing: 0.2px;
+}
+
+.fss__info {
+    font-size: clamp(0.85rem, 1.1vw, 1rem);
+    line-height: 1.5;
+    opacity: 0.85;
+    margin: 0;
+}
+
+.fss__ui {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    padding: 20px clamp(20px, 5vw, 64px);
+    color: #f4f1ea;
+}
+
+.fss__count {
+    font-variant-numeric: tabular-nums;
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
+    opacity: 0.85;
+    white-space: nowrap;
+}
+
+.fss__count em {
+    font-style: normal;
+    opacity: 0.5;
+    margin: 0 2px;
+}
+
+.fss__dashes {
+    flex: 1;
+    display: flex;
+    gap: 8px;
+}
+
+.fss__dash {
+    position: relative;
+    flex: 1;
+    height: 3px;
+    background: rgba(244, 241, 234, 0.28);
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.fss__dashFill {
+    position: absolute;
+    inset: 0;
+    transform: scaleX(0);
+    transform-origin: left;
+    background: #f4f1ea;
+}
+
+.fss__dash.is-active .fss__dashFill {
+    animation: fss-fill var(--dash-dur, 6000ms) linear forwards;
+}
+
+@keyframes fss-fill {
+    from {
+        transform: scaleX(0);
+    }
+
+    to {
+        transform: scaleX(1);
+    }
+}
+
+.fss__arrows {
+    display: flex;
+    gap: 12px;
+}
+
+.fss__arrow {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid rgba(244, 241, 234, 0.4);
+    background: transparent;
+    color: #f4f1ea;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.fss__arrow:hover {
+    background: rgba(244, 241, 234, 0.12);
+    border-color: rgba(244, 241, 234, 0.8);
+}
+
+.fss__arrow:focus-visible,
+.fss__dash:focus-visible {
+    outline: 2px solid #f4f1ea;
+    outline-offset: 2px;
+}
+
+@media (max-width: 640px) {
+    .fss__ui {
+        gap: 14px;
+    }
+
+    .fss__count {
+        display: none;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .fss__img,
+    .fss__slide {
+        transition: none;
+    }
+
+    .fss__dashFill {
+        animation: none;
+    }
+}
