@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-
 import { LOGO_SRC, HELP_WAYS } from "../../../data";
-
 import "./Navbar.css";
 
 export default function Navbar() {
