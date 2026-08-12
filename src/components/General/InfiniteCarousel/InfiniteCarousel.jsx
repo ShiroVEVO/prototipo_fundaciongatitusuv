@@ -1,5 +1,7 @@
 import { useMemo } from "react";
+
 import "./InfiniteCarousel.css";
+
 /**
  * Carrusel infinito genérico.
  *

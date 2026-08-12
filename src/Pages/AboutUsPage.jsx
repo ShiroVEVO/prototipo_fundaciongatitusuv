@@ -1,5 +1,5 @@
-import Navbar from "../components/NavBar/Navbar"
-import Footer from "../components/Footer/Footer"
+import Navbar from "../components/General/NavBar/Navbar"
+import Footer from "../components/General/Footer/Footer"
 import Infographic from "../components/Infographic"
 
 const AboutUsPage = () => {

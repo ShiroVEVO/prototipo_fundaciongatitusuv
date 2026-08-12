@@ -1,6 +1,10 @@
 import React, { useState } from "react";
+
 import emailjs from "@emailjs/browser";
-import "./FormToGoogleForm.css";
+
+import { EMAILJS_PUBLIC_KEY, EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, RESPONSE_TYPES } from "../../../data"
+
+import "./FormToMail.css";
 
 /**
  * ============ CONFIGURACIÓN DE ENVÍO DE CORREO (EmailJS) ============
@@ -22,17 +26,6 @@ import "./FormToGoogleForm.css";
  * 5. En "Account > General" copia tu "Public Key".
  * 6. Reemplaza las 3 constantes de abajo con esos valores.
  */
-const EMAILJS_SERVICE_ID = "service_u38hjwg";
-const EMAILJS_TEMPLATE_ID = "template_82iwpj1";
-const EMAILJS_PUBLIC_KEY = "U_7mXNvuUUL8V42cn";
-
-export const RESPONSE_TYPES = [
-    "Donar",
-    "Apadrinar",
-    "Hogar de paso",
-    "Voluntario",
-    "Adopción",
-];
 
 /**
  * @param {string} title            Título de la instancia del formulario (se usa también en el asunto del correo)
@@ -40,7 +33,7 @@ export const RESPONSE_TYPES = [
  * @param {boolean} forceType       Si es true, bloquea el select en `responseType` y el usuario no puede cambiarlo
  * @param {function} onSuccess      Callback opcional que se ejecuta al enviar correctamente
  */
-export default function ContactForm({
+export default function FormToMail({
     title = "Escríbenos",
     responseType,
     forceType = false,

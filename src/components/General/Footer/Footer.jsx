@@ -2,8 +2,7 @@ import { Link } from "react-router-dom";
 
 import "./Footer.css";
 
-import LOGO_SRC from "../../data/logoUbication";
-import SOCIALS from "../../data/socials";
+import { LOGO_SRC, SOCIALS } from "../../../data";
 
 const NAV_LINKS = [
   { label: "Adopciones", href: "#rescate" },

@@ -1,9 +1,9 @@
-import React from "react";
 import StatsCounter from "./StatsCounter";
-import CatCarousel from "./CatCarousel";
-import InfiniteCarousel from "./InfiniteCarousel";
 import CatCard from "./CatCard";
-import cats from "../data/cats.js";
+
+import { InfiniteCarousel } from "./General";
+
+import { CATS } from "../data";
 
 export default function RescueSection() {
   return (
@@ -28,7 +28,7 @@ export default function RescueSection() {
         </div>
 
         <InfiniteCarousel
-          items={cats}
+          items={CATS}
           getKey={(cat) => cat.id}
           ariaLabel="Gatos disponibles para adopción"
           speed={25}

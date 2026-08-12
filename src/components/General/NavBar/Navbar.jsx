@@ -1,18 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import "./Navbar.css";
-import LOGO_SRC from "../../data/logoUbication";
 
-const HELP_OPTIONS = [
-  { label: "Adopta", href: "/adopta" },
-  { label: "Apadrina", href: "/apadrina" },
-  { label: "Dona", href: "/dona" },
-  { label: "Sé voluntario", href: "/voluntariado" },
-];
+import { LOGO_SRC, HELP_WAYS } from "../../../data";
+
+import "./Navbar.css";
 
 export default function Navbar() {
   const location = useLocation();
-  // Ajusta esta condición si tu landing no vive en "/"
   const isLandingPage = location.pathname === "/";
 
   const [isScrolled, setIsScrolled] = useState(false);
@@ -80,7 +74,7 @@ export default function Navbar() {
               ¿Cómo ayudar?
             </button>
             <ul className="navbar__dropdown-menu">
-              {HELP_OPTIONS.map((opt) => (
+              {HELP_WAYS.map((opt) => (
                 <li key={opt.label}>
                   <a href={opt.href}>{opt.label}</a>
                 </li>
@@ -133,7 +127,7 @@ export default function Navbar() {
             </button>
             {isHelpOpenMobile && ( /*FALTA ADAPTAR A ANCLAS EN LA PESTAÑA DE AYUDA*/
               <ul className="navbar__mobile-submenu">
-                {HELP_OPTIONS.map((opt) => (
+                {HELP_WAYS.map((opt) => (
                   <li key={opt.label}>
                     <a href={opt.href} onClick={() => setIsMobileOpen(false)}>
                       {opt.label}

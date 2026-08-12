@@ -1,5 +1,7 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 
+import { SLIDER_ITEMS } from "../../../data";
+
 import "./ScreenSlider.css";
 /**
  * Slider fullscreen de fotos con info posicionable.
@@ -16,7 +18,7 @@ import "./ScreenSlider.css";
  * - items: array de items (ver forma arriba). Si no se pasa, usa un demo de 4.
  * - autoPlayMs: intervalo de autoplay en ms (default 6000, 0 = desactivado)
  */
-export default function ScreenSlider({ items = demoItems, autoPlayMs = 6000 }) {
+export default function ScreenSlider({ items = SLIDER_ITEMS, autoPlayMs = 6000 }) {
     const [index, setIndex] = useState(0);
     const [paused, setPaused] = useState(false);
     const total = items.length;
@@ -104,31 +106,3 @@ export default function ScreenSlider({ items = demoItems, autoPlayMs = 6000 }) {
         </div>
     );
 }
-
-// Demo / forma esperada del JSON de items
-const demoItems = [
-    {
-        image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=1600&auto=format&fit=crop",
-        title: "Cordillera",
-        info: "Amanecer sobre la cadena montañosa, 3.400 msnm.",
-        position: "bottom-left",
-    },
-    {
-        image: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=80&w=1600&auto=format&fit=crop",
-        title: "Bosque nativo",
-        info: "Luz filtrada entre los árboles al mediodía.",
-        position: "center",
-    },
-    {
-        image: "https://images.unsplash.com/photo-1500534623283-312aade485b7?q=80&w=1600&auto=format&fit=crop",
-        title: "Costa",
-        info: "Marea baja frente al acantilado sur.",
-        position: "bottom-right",
-    },
-    {
-        image: "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?q=80&w=1600&auto=format&fit=crop",
-        title: "Valle",
-        info: "Niebla matinal cubriendo el valle bajo.",
-        position: "bottom-left",
-    },
-];

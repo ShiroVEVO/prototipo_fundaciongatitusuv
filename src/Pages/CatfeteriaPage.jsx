@@ -1,14 +1,30 @@
-import Navbar from "../components/NavBar/Navbar";
-import Footer from "../components/Footer/Footer";
-import ScreenSlider from "../components/ScreenSlider";
-import ParallaxSection from "../components/ParallaxSection";
+import { Navbar, Footer, Catalog, ParallaxSection, ScreenSlider, InfiniteCarousel } from "../components/General"
+
+import MealCard from "../components/MealCard";
+
+import { PRODUCTS } from "../data";
+
+import "./CatfeteriaPage.css";
 
 const CatfeteriaPage = () => {
     return (
         <>
             <Navbar />
             <ScreenSlider />
-            <ParallaxSection img="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=1600&auto=format&fit=crop" text="Bienvenido a la Catfeteria" />
+            <section id="catfeteria_content">
+                <div className="section__header">
+                    <p className="eyebrow">Nuestros</p>
+                    <h2 className="section__title">Productos</h2>
+                </div>
+            </section>
+            <InfiniteCarousel
+                items={PRODUCTS}
+                getKey={(cat) => cat.title}
+                ariaLabel=""
+                speed={25}
+                renderItem={(cat) => <MealCard meal={cat} />}
+            />
+            <Catalog />
             <Footer />
         </>
     )

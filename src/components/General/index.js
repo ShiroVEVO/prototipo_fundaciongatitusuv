@@ -1,0 +1,8 @@
+export { default as BlobFrame } from "./BlobFrame/BlobFrame";
+export { default as Catalog } from "./Catalog/Catalog";
+export { default as Footer } from "./Footer/Footer";
+export { default as FormToMail } from "./FormToMail/FormToMail";
+export { default as InfiniteCarousel } from "./InfiniteCarousel/InfiniteCarousel"
+export { default as Navbar } from "./NavBar/Navbar";
+export { default as ParallaxSection } from "./ParallaxSection/ParallaxSection";
+export { default as ScreenSlider } from "./ScreenSlider/ScreenSlider"

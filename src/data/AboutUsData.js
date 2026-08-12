@@ -1,4 +1,4 @@
-const items = [
+const ABOUT_US_DATA = [
     {
         title: "¿Quiénes somos?",
         body: "Somos una fundación sin ánimo de lucro, legalmente constituída y perteneciente al Régimen Especial,  que esteriliza, rescata, acoge, recupera y da en adopción responsable gatos en estado de abandono y calle. Trabajamos incansablemente por los animales desde Canadá y tenemos la fundación en Bogotá, Colombia.",
@@ -25,4 +25,4 @@ const items = [
     }
 ]
 
-export default items
+export default ABOUT_US_DATA

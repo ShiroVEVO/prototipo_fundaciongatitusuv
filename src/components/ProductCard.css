@@ -1,0 +1,203 @@
+/* ----- Flip card mechanics ----- */
+.gatitu-flip-card {
+    perspective: 1600px;
+    cursor: pointer;
+    outline: none;
+}
+
+.gatitu-flip-inner {
+    position: relative;
+    width: 100%;
+    min-height: 420px;
+    transition: transform 0.6s cubic-bezier(0.4, 0.15, 0.2, 1);
+    transform-style: preserve-3d;
+}
+
+.gatitu-flip-inner.is-flipped {
+    transform: rotateY(180deg);
+}
+
+.gatitu-flip-face {
+    position: absolute;
+    inset: 0;
+    backface-visibility: hidden;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 14px rgba(31, 42, 36, 0.12);
+    display: flex;
+    flex-direction: column;
+}
+
+.gatitu-flip-front {
+    background: #FFFDF7;
+}
+
+.gatitu-flip-back {
+    transform: rotateY(180deg);
+    padding: 28px 24px 24px;
+    color: #FAF6EC;
+    background: var(--accent-dark);
+}
+
+/* ----- Front face ----- */
+.gatitu-card-image-wrap {
+    position: relative;
+    height: 160px;
+}
+
+.gatitu-card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.gatitu-stamp {
+    position: absolute;
+    bottom: -14px;
+    right: 16px;
+    font-family: 'Fredoka', sans-serif;
+    font-weight: 600;
+    font-size: 12px;
+    padding: 6px 12px;
+    border-radius: 999px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.18);
+    transform: rotate(-4deg);
+    background: var(--accent);
+    color: var(--accent-dark);
+}
+
+.gatitu-perforation {
+    position: relative;
+    height: 0;
+    margin-top: 18px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.gatitu-perforation-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #F5EFE1;
+    transform: translateY(-3px);
+}
+
+.gatitu-card-body {
+    padding: 16px 20px 20px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.gatitu-card-kicker {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin: 0 0 4px;
+    color: var(--accent);
+}
+
+.gatitu-card-title {
+    font-family: 'Fredoka', sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    margin: 0 0 6px;
+    color: #1F2A24;
+}
+
+.gatitu-card-price {
+    font-size: 15px;
+    font-weight: 500;
+    color: #4E5A50;
+    margin: 0 0 16px;
+}
+
+.gatitu-reserve-btn {
+    border: none;
+    border-radius: 10px;
+    padding: 10px 16px;
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    transition: transform 0.15s ease, opacity 0.15s ease;
+    background: var(--accent);
+    color: var(--accent-dark);
+}
+
+.gatitu-reserve-btn:hover {
+    transform: translateY(-1px);
+    opacity: 0.92;
+}
+
+.gatitu-reserve-btn:active {
+    transform: translateY(0);
+}
+
+.gatitu-card-hint {
+    margin: 12px 0 0;
+    font-size: 12px;
+    color: #9A927E;
+}
+
+/* ----- Back face ----- */
+.gatitu-back-kicker {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin: 0 0 6px;
+    color: var(--accent);
+}
+
+.gatitu-back-title {
+    font-family: 'Fredoka', sans-serif;
+    font-weight: 600;
+    font-size: 22px;
+    margin: 0 0 18px;
+}
+
+.gatitu-back-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.gatitu-back-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+.gatitu-back-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    margin-top: 6px;
+    flex: none;
+    background: var(--accent);
+}
+
+.gatitu-reserve-btn--back {
+    background: transparent;
+    border: 2px solid var(--accent);
+    color: var(--accent);
+    margin-top: 20px;
+}
+
+@media (max-width: 480px) {
+    .gatitu-header-title {
+        font-size: 30px;
+    }
+
+    .gatitu-grid {
+        grid-template-columns: 1fr;
+    }
+}

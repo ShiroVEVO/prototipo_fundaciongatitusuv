@@ -1,10 +1,9 @@
-import React from 'react';
-import Navbar from '../components/NavBar/Navbar';
+import Navbar from '../components/General/NavBar/Navbar';
 import Hero from "../components/Hero";
 import RescueSection from "../components/RescueSection";
 import CafeSection from "../components/CafeSection";
 import HelpSection from "../components/HelpSection";
-import Footer from "../components/Footer/Footer";
+import Footer from "../components/General/Footer/Footer";
 
 const LadingPage = () => {
     return (
