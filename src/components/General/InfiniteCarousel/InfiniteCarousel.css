@@ -1,6 +1,8 @@
 .carousel {
     overflow: hidden;
     width: 100%;
+    cursor: grab;
+    touch-action: pan-y;
     -webkit-mask-image: linear-gradient(to right,
             transparent 0,
             #000 5%,
@@ -13,36 +15,24 @@
             transparent 100%);
 }
 
+.carousel:active {
+    cursor: grabbing;
+}
+
 .carousel__track {
     display: flex;
     gap: var(--carousel-gap);
     width: max-content;
-    animation: carousel-scroll var(--carousel-speed) linear infinite;
-}
-
-.carousel:hover .carousel__track {
-    animation-play-state: paused;
+    will-change: transform;
+    user-select: none;
+    -webkit-user-select: none;
 }
 
 .carousel__item {
     flex: 0 0 auto;
+    -webkit-user-drag: none;
 }
 
-/* Como triplicamos el arreglo, un ciclo completo equivale
-           a desplazar exactamente un tercio del ancho total (-33.3333%) */
-@keyframes carousel-scroll {
-    from {
-        transform: translateX(0);
-    }
-
-    to {
-        transform: translateX(-33.3333%);
-    }
-}
-
-@media (prefers-reduced-motion: reduce) {
-    .carousel__track {
-        animation: none;
-        overflow-x: auto;
-    }
+.carousel__item img {
+    -webkit-user-drag: none;
 }
