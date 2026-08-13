@@ -23,11 +23,11 @@ export default function Catalog() {
     return (
         <div className="gatitu-page">
             <header className="gatitu-header">
-                <p className="gatitu-header-kicker">Fundación Gatitu</p>
+                <p className="gatitu-header-kicker">Conoce todos</p>
                 <h1 className="gatitu-header-title">Nuestros servicios</h1>
                 <p className="gatitu-header-sub">
-                    Toca cualquier tarjeta para ver qué incluye. Todos los planes apoyan
-                    a los gatos residentes de la fundación.
+                    Toca para ver tooodo lo que incluyen nuestros gatiplanes 🐱
+                    recuerda que todos los ingresos irán destinados a nuestros gatitos residentes.
                 </p>
             </header>
 

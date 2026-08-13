@@ -36,7 +36,7 @@ function ProductCard({ service, category, onReserve }) {
                 {/* ---------- FRENTE ---------- */}
                 <div className="gatitu-flip-face gatitu-flip-front">
                     <div className="gatitu-card-image-wrap">
-                        <img src={service.image} alt={service.title} className="gatitu-card-image" />
+                        <img src={import.meta.env.BASE_URL + service.image} alt={service.title} className="gatitu-card-image" />
                         <span
                             className="gatitu-stamp"
                             style={{ background: style.accent, color: style.dark }}

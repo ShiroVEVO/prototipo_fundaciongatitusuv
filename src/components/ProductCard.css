@@ -29,13 +29,13 @@
 }
 
 .gatitu-flip-front {
-    background: #FFFDF7;
+    background: var(--color-light);
 }
 
 .gatitu-flip-back {
     transform: rotateY(180deg);
     padding: 28px 24px 24px;
-    color: #FAF6EC;
+    color: var(--color-light);
     background: var(--accent-dark);
 }
 
@@ -56,7 +56,7 @@
     position: absolute;
     bottom: -14px;
     right: 16px;
-    font-family: 'Fredoka', sans-serif;
+    font-family: var(--font-body);
     font-weight: 600;
     font-size: 12px;
     padding: 6px 12px;
@@ -79,7 +79,7 @@
     width: 6px;
     height: 6px;
     border-radius: 50%;
-    background: #F5EFE1;
+    background: var(--color-light);
     transform: translateY(-3px);
 }
 
@@ -100,7 +100,7 @@
 }
 
 .gatitu-card-title {
-    font-family: 'Fredoka', sans-serif;
+    font-family: var(--font-titles-body);
     font-weight: 600;
     font-size: 20px;
     margin: 0 0 6px;
@@ -108,6 +108,7 @@
 }
 
 .gatitu-card-price {
+    font-family: var(--font-body);
     font-size: 15px;
     font-weight: 500;
     color: #4E5A50;
@@ -118,7 +119,7 @@
     border: none;
     border-radius: 10px;
     padding: 10px 16px;
-    font-family: 'Work Sans', sans-serif;
+    font-family: var(--font-body);
     font-weight: 600;
     font-size: 14px;
     cursor: pointer;
@@ -137,6 +138,7 @@
 }
 
 .gatitu-card-hint {
+    font-family: var(--font-body);
     margin: 12px 0 0;
     font-size: 12px;
     color: #9A927E;
@@ -153,7 +155,7 @@
 }
 
 .gatitu-back-title {
-    font-family: 'Fredoka', sans-serif;
+    font-family: var(--font-titles-body);
     font-weight: 600;
     font-size: 22px;
     margin: 0 0 18px;
@@ -174,6 +176,7 @@
     gap: 10px;
     font-size: 14px;
     line-height: 1.4;
+    font-family: var(--font-body);
 }
 
 .gatitu-back-dot {
