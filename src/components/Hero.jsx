@@ -5,7 +5,7 @@ import React from "react";
  * Muestra un video en loop (con imagen de respaldo si el navegador no puede reproducirlo
  * o mientras carga).
  */
-const VIDEO_SRC = "video/videoplayback.mp4";
+const VIDEO_SRC = "video/videoLanding.mp4";
 const POSTER_SRC = "img/backgroundExample.jpg";
 
 export default function Hero() {
