@@ -60,7 +60,7 @@
 }
 
 .navbar__links--desktop>li>a:hover,
-.navbar__dropdown-trigger:hover {
+.navbar__links--desktop>li>Link:hover .navbar__dropdown-trigger:hover {
   background: var(--color-light);
   color: var(--primary-main);
 }

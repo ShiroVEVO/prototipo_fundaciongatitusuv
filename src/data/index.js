@@ -8,3 +8,4 @@ export { EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, EMAILJS_PUBLIC_KEY } from "./e
 export { LOGO_SRC, BLOB_PATH_A, GOOGLE_MAPS_UBICATION } from "./others";
 export { default as PRODUCTS } from "./products";
 export { default as SLIDER_ITEMS } from "./SliderItems";
+export { GENERAL_BENEFITS, DEFAULT_TIERS } from "./sponsorTiers"

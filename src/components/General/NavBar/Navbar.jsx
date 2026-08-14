@@ -74,7 +74,7 @@ export default function Navbar() {
             <ul className="navbar__dropdown-menu">
               {HELP_WAYS.map((opt) => (
                 <li key={opt.label}>
-                  <a href={opt.href}>{opt.label}</a>
+                  <Link to={opt.href}>{opt.label}</Link>
                 </li>
               ))}
             </ul>

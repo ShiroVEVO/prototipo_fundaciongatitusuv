@@ -1,4 +1,4 @@
-import React from "react";
+import { Link } from "react-router-dom";
 
 /**
  * Banner principal a pantalla completa.
@@ -38,9 +38,9 @@ export default function Hero() {
           <a href="#rescate" className="btn btn--primary">
             Quiero adoptar
           </a>
-          <a href="#cafeteria" className="btn btn--ghost">
+          <Link to="/catfeteria" className="btn btn--ghost">
             Conoce el café
-          </a>
+          </Link>
         </div>
       </div>
 
