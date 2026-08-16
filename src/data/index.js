@@ -1,5 +1,5 @@
 export { default as ABOUT_US_DATA } from "./aboutUsData";
-export { default as CATS } from "./cats";
+export { CATS, INFO_CATS } from "./cats";
 export { default as SOCIALS } from "./socials";
 export { default as HELP_WAYS } from "./helpWays";
 export { SERVICE_CATEGORIES, CATEGORY_STYLES } from "./services";
@@ -9,3 +9,4 @@ export { LOGO_SRC, BLOB_PATH_A, GOOGLE_MAPS_UBICATION } from "./others";
 export { default as PRODUCTS } from "./products";
 export { default as SLIDER_ITEMS } from "./SliderItems";
 export { GENERAL_BENEFITS, DEFAULT_TIERS } from "./sponsorTiers"
+export { default as VOLUNTEERING_TYPES } from "./volunteeringTypes" 

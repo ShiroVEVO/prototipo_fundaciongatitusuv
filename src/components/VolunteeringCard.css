@@ -1,0 +1,119 @@
+/* From Uiverse.io by JohnnyCSilva — adaptado */
+.card {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    min-width: 350px;
+    max-width: 350px;
+    height: 550px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    transition: 0.2s ease-in-out;
+}
+
+.img {
+    position: absolute;
+    width: 112%;
+    height: 112%;
+    object-fit: cover;
+    transition: 0.2s ease-in-out;
+    z-index: 1;
+}
+
+/* Franja negra centrada, visible antes del hover */
+.band {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.55);
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    font-weight: bold;
+    font-size: 14px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    z-index: 3;
+    transition: opacity 0.2s ease-in-out;
+}
+
+.textBox {
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 24px 20px;
+    background: rgba(0, 0, 0, 0.55);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    transition: 0.2s ease-in-out;
+    z-index: 2;
+}
+
+.textBox>.text {
+    font-weight: bold;
+}
+
+.textBox>.head {
+    font-size: 20px;
+}
+
+.textBox>.list {
+    list-style: disc;
+    text-align: left;
+    align-self: stretch;
+    padding-left: 20px;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    font-size: 13px;
+    color: #e6e6e6;
+}
+
+.textBox>.list li::marker {
+    color: lightgrey;
+}
+
+/* Al hacer hover, la franja se esfuma y da paso al contenido de siempre */
+.card:hover>.band {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.card:hover>.textBox {
+    opacity: 1;
+}
+
+.card:hover>.img {
+    filter: blur(4px);
+    animation: anim 3s infinite;
+}
+
+@keyframes anim {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.card:hover {
+    transform: scale(1.04) rotate(-1deg);
+}

@@ -5,13 +5,13 @@ import "./Footer.css";
 import { LOGO_SRC, SOCIALS } from "../../../data";
 
 const NAV_LINKS = [
-  { label: "Adopciones", href: "#rescate" },
-  { label: "Cafetería", href: "#cafeteria" },
-  { label: "Cómo ayudar", href: "#ayudar" },
+  { label: "Adopciones", href: "/adopta" },
+  { label: "Cafetería", href: "/catfeteria" },
+  { label: "Cómo ayudar", href: "/adopta" },
   { label: "Hogar de paso", href: "/hogar-de-paso" },
   { label: "Voluntariado", href: "/voluntariado" },
-  { label: "Donar", href: "/donar" },
-  { label: "Apadrinar", href: "/apadrinar" },
+  { label: "Donar", href: "/dona" },
+  { label: "Apadrinar", href: "/apadrina" },
 ];
 
 export default function Footer() {

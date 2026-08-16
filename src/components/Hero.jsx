@@ -35,9 +35,9 @@ export default function Hero() {
           Un hogar de paso, una taza de café y un gatito esperando encontrarte.
         </p>
         <div className="hero__actions">
-          <a href="#rescate" className="btn btn--primary">
+          <Link to="/adopta" className="btn btn--primary">
             Quiero adoptar
-          </a>
+          </Link>
           <Link to="/catfeteria" className="btn btn--ghost">
             Conoce el café
           </Link>

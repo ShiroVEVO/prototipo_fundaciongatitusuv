@@ -1,0 +1,21 @@
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--card-container-gap);
+    justify-content: center;
+    /* margin: 0 auto; */
+    margin-bottom: var(--card-container-gap);
+    box-sizing: border-box;
+    padding-left: 5em;
+    padding-right: 5em;
+}
+
+.card-container.first-section {
+    margin-top: 120px;
+}
+
+.card-container-item {
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+}

@@ -16,6 +16,7 @@
   --radius-lg: 28px;
   --radius-md: 16px;
   --container: 1200px;
+  --card-container-gap: 24px;
 }
 
 * {

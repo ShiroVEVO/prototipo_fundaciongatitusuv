@@ -6,3 +6,4 @@ export { default as InfiniteCarousel } from "./InfiniteCarousel/InfiniteCarousel
 export { default as Navbar } from "./NavBar/Navbar";
 export { default as ParallaxSection } from "./ParallaxSection/ParallaxSection";
 export { default as ScreenSlider } from "./ScreenSlider/ScreenSlider"
+export { default as CardContainer } from "./CardContainer/CardContainer"
