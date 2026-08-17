@@ -7,6 +7,7 @@ import CatfeteriaPage from "./Pages/CatfeteriaPage.jsx";
 import SponsorPage from "./Pages/SponsorPage.jsx";
 import VolunteeringPage from "./Pages/VolunteeringPage.jsx";
 import AdoptionPage from "./Pages/AdoptionPage.jsx";
+import DonationPage from "./Pages/DonationPage.jsx"
 import { HashRouter, Route, Routes } from "react-router-dom";
 
 
@@ -20,7 +21,7 @@ export default function App() {
         <Route path="/adopta" element={<AdoptionPage />} />
 
         <Route path="/apadrina" element={<SponsorPage />} />
-        {/* <Route path="/dona" element={<DonationPage/>}/> */}
+        <Route path="/dona" element={<DonationPage />} />
         <Route path="/voluntariado" element={<VolunteeringPage />} />
         {/* <Route path="/hogar-de-paso" element={<ShelterPage />} /> */}
 
