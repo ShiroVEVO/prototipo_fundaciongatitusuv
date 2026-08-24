@@ -46,7 +46,7 @@ export const DEFAULT_TIERS = [
             '1 hora gratis de alquiler de espacio en gatitueventos',
         ],
         glowColor: 'var(--color-accent-silver)',
-        glowIntensity: 'medium',
+        glowIntensity: 'soft',
         featured: false,
     },
     {

@@ -1,7 +1,6 @@
-import { Navbar, Footer, CardContainer } from "../components/General"
-import VolunteeringCard from "../components/VolunteeringCard"
+import { Navbar, Footer, CardContainer, PaymentCard, TextHeader, VolunteeringCard } from "../components"
 
-import { DONATION_TYPES } from "../data"
+import { DONATION_TYPES, PAYMENT_METHODS } from "../data"
 /**
  * 
  * Props:
@@ -17,11 +16,21 @@ const DonationPage = () => {
     return (
         <>
             <Navbar />
+            <TextHeader eyebrow="ayudanos con tu" title="DONACIÓN EN ESPECIE" subtitle="por medio de:" isFirstSection={true} />
             <CardContainer>
                 {DONATION_TYPES.map((donationType) => (
                     <VolunteeringCard
                         key={donationType.name}
                         volunteeringType={donationType}
+                    />
+                ))}
+            </CardContainer>
+            <TextHeader eyebrow="Tambien recibimos" title="DONACIÓNES MONETARIAS" />
+            <CardContainer>
+                {PAYMENT_METHODS.map((paymentMethod) => (
+                    <PaymentCard
+                        key={paymentMethod.id}
+                        paymentMethod={paymentMethod}
                     />
                 ))}
             </CardContainer>

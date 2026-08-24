@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import { CATEGORY_STYLES } from "../data";
+import { CATEGORY_STYLES } from "../../../data";
 
 import "./ProductCard.css";
 

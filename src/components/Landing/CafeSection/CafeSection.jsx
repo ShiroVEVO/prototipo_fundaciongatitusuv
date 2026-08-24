@@ -1,4 +1,6 @@
-import { GOOGLE_MAPS_UBICATION } from "../data";
+import { GOOGLE_MAPS_UBICATION } from "../../../data";
+
+import "./CafeSection.css"
 
 export default function CafeSection() {
   return (

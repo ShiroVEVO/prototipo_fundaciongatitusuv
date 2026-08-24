@@ -1,6 +1,6 @@
 import "./AdoptionCard.css";
 
-import { INFO_CATS } from "../data";
+import { INFO_CATS } from "../../data";
 /**
  * Ficha de adopción felina.
  *
@@ -135,6 +135,9 @@ export default function AdoptionCard({ cat }) {
 
     return (
         <article className="gato-card" tabIndex={0}>
+            <span className={`gato-card__stamp ${statusInfo.stampClass}`}>
+                {statusInfo.stampLabel}
+            </span>
             <div className="gato-card__front">
                 <img
                     className="gato-card__img"
@@ -142,9 +145,7 @@ export default function AdoptionCard({ cat }) {
                     alt={`${name}, ${age}`}
                     loading="lazy"
                 />
-                <span className={`gato-card__stamp ${statusInfo.stampClass}`}>
-                    {statusInfo.stampLabel}
-                </span>
+
                 <div className="gato-card__tag">
                     <span className="gato-card__name">{name}</span>
                     <span className="gato-card__age">{age}</span>

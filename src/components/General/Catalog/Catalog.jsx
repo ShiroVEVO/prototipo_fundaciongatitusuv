@@ -1,6 +1,4 @@
-import { useState } from "react";
-
-import ServiceCard from "../../ProductCard";
+import { ProductCard } from "../../../components";
 
 import { SERVICE_CATEGORIES } from '../../../data'
 
@@ -39,7 +37,7 @@ export default function Catalog() {
                     </div>
                     <div className="gatitu-grid">
                         {category.services.map((service) => (
-                            <ServiceCard
+                            <ProductCard
                                 key={service.id}
                                 service={service}
                                 category={category}

@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import './TierCard.css';
 
 
@@ -38,7 +39,7 @@ export default function TierCard({ tier, GENERAL_BENEFITS }) {
       >
         {/* Cara frontal */}
         <div className="tier-card__face tier-card__face--front">
-          {tier.featured && <span className="tier-card__badge">Más elegido</span>}
+          {tier.featured && <span className="tier-card__badge">Más impacto!</span>}
 
           <div className="tier-card__paws" aria-hidden="true">
             {'🐾'.repeat(tier.pawLevel)}
@@ -58,6 +59,10 @@ export default function TierCard({ tier, GENERAL_BENEFITS }) {
               <li key={benefit}>{benefit}</li>
             ))}
           </ul>
+
+          <Link to="https://wa.link/lscraa" className="btn btn--primary">
+            Quiero Apadrinar
+          </Link>
 
           <span className="tier-card__flip-hint">Toca para ver todos los beneficios ↻</span>
         </div>

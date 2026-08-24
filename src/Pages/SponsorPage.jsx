@@ -1,5 +1,4 @@
-import { Navbar, Footer } from "../components/General";
-import SponsorGrid from "../components/SponsorGrid";
+import { Navbar, Footer, SponsorGrid } from "../components";
 
 import { GENERAL_BENEFITS, DEFAULT_TIERS } from "../data";
 

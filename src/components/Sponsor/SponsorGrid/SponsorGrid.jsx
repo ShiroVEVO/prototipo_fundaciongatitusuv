@@ -1,4 +1,5 @@
-import TierCard from "../components/TierCard"
+import { TierCard, TextHeader } from "../../../components"
+
 import "./SponsorGrid.css"
 /**
  * SponsorCards
@@ -14,14 +15,7 @@ import "./SponsorGrid.css"
 export default function SponsorGrid({ tiers, GENERAL_BENEFITS }) {
     return (
         <section className="sponsor-cards">
-            <header className="sponsor-cards__intro">
-                <span className="sponsor-cards__eyebrow">Apadrinamiento felino</span>
-                <h2 className="sponsor-cards__title">Elige cómo acompañar a un gatito</h2>
-                <p className="sponsor-cards__subtitle">
-                    Todos los planes son mes a mes: tú decides cuándo pausar o cancelar.
-                </p>
-            </header>
-
+            <TextHeader eyebrow="Apadrinamiento" title="Elige cómo ayudar a uno de nuestros gatitus" subtitle="Todos los planes son mes a mes: tú decides cuándo pausar o cancelar." />
             <div className="sponsor-cards__grid">
                 {tiers.map((tier) => (
                     <TierCard key={tier.id} tier={tier} GENERAL_BENEFITS={GENERAL_BENEFITS} />

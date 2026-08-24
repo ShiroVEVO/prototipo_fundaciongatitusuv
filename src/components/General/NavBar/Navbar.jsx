@@ -71,10 +71,10 @@ export default function Navbar() {
             <button type="button" className="navbar__dropdown-trigger">
               ¿Cómo ayudar?
             </button>
-            <ul className="navbar__dropdown-menu">
+            <ul className="navbar__dropdown-menu navbar__links">
               {HELP_WAYS.map((opt) => (
                 <li key={opt.label}>
-                  <Link to={opt.href}>{opt.label}</Link>
+                  <Link className="NavBarReferences" to={opt.href}>{opt.label}</Link>
                 </li>
               ))}
             </ul>
@@ -123,13 +123,19 @@ export default function Navbar() {
                   }`}
               />
             </button>
-            {isHelpOpenMobile && ( /*FALTA ADAPTAR A ANCLAS EN LA PESTAÑA DE AYUDA*/
+            {/* Submenu móvil */}
+            {isHelpOpenMobile && (
               <ul className="navbar__mobile-submenu">
                 {HELP_WAYS.map((opt) => (
                   <li key={opt.label}>
-                    <a href={opt.href} onClick={() => setIsMobileOpen(false)}>
+                    <a
+                      className="NavBarReferences"
+                      href={opt.href}
+                      onClick={() => setIsMobileOpen(false)}
+                    >
                       {opt.label}
                     </a>
+                    {/* antes: no tenía className → no heredaba el estilo del submenu */}
                   </li>
                 ))}
               </ul>

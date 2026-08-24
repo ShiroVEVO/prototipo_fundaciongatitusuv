@@ -2,7 +2,8 @@
     display: flex;
     flex-direction: column;
     gap: 1.25rem;
-    width: 30vw;
+    width: 100%;
+    max-width: 500px;
     padding: 2rem;
     background: var(--primary-main-60);
     border: 1px solid var(--primary-main);

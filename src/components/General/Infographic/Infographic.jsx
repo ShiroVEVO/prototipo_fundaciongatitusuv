@@ -1,10 +1,8 @@
-import InfographicItem from './InfographicItem.jsx'
+import { InfographicItem } from '../../General'
 
 import './Infographic.css'
 
-import ITEMS from '../data/AboutUsData.js'
-
-const Infographic = () => {
+const Infographic = ({ ITEMS }) => {
     return (
         <div className="infographic">
             {ITEMS.map((item) => (

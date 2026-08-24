@@ -7,3 +7,8 @@ export { default as Navbar } from "./NavBar/Navbar";
 export { default as ParallaxSection } from "./ParallaxSection/ParallaxSection";
 export { default as ScreenSlider } from "./ScreenSlider/ScreenSlider"
 export { default as CardContainer } from "./CardContainer/CardContainer"
+export { default as TextHeader } from "./TextHeader/TextHeader"
+export { default as Hero } from "./Hero/Hero"
+export { default as Infographic } from "./Infographic/Infographic"
+export { default as InfographicItem } from "./InfographicItem/InfographicItem"
+export { default as ProductCard } from "./ProductCard/ProductCard"

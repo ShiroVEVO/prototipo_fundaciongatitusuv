@@ -7,6 +7,7 @@
     font-family: "Helvetica Neue", Arial, sans-serif;
 }
 
+/* -------- slides (sin cambios de comportamiento) -------- */
 .fss__slide {
     position: absolute;
     inset: 0;
@@ -43,6 +44,7 @@
         linear-gradient(180deg, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0) 22%);
 }
 
+/* -------- textos/información: misma ubicación que antes -------- */
 .fss__caption {
     position: absolute;
     max-width: min(640px, 80vw);
@@ -85,6 +87,57 @@
     margin: 0;
 }
 
+/* =========================================================
+   FLECHAS — círculos oscuros con ícono triangular, al estilo
+   de referencia (mismos SVG que .carousel::before/::after)
+   ========================================================= */
+.fss__arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 3;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    border: 1px solid rgba(244, 241, 234, 0.22);
+    background-color: rgba(10, 10, 10, 0.55);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 16px 16px;
+    filter: drop-shadow(0 8px 18px rgba(0, 0, 0, 0.4));
+    cursor: pointer;
+    font-size: 0;
+    transition: background-color 0.2s ease, border-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.fss__arrow--prev {
+    left: clamp(16px, 4vw, 48px);
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolygon points='0,50 80,100 80,0' fill='%23fff'/%3E%3C/svg%3E");
+}
+
+.fss__arrow--next {
+    right: clamp(16px, 4vw, 48px);
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolygon points='100,50 20,100 20,0' fill='%23fff'/%3E%3C/svg%3E");
+}
+
+.fss__arrow:hover {
+    background-color: rgba(10, 10, 10, 0.82);
+    border-color: rgba(244, 241, 234, 0.6);
+}
+
+.fss__arrow:active {
+    transform: translateY(-50%) scale(0.92);
+}
+
+.fss__arrow:focus-visible {
+    outline: 2px solid #f4f1ea;
+    outline-offset: 3px;
+}
+
+/* =========================================================
+   BARRA INFERIOR: contador + navegación por puntos
+   ========================================================= */
 .fss__ui {
     position: absolute;
     left: 0;
@@ -93,110 +146,92 @@
     z-index: 2;
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 24px;
-    padding: 20px clamp(20px, 5vw, 64px);
+    padding: 22px clamp(20px, 5vw, 64px);
     color: #f4f1ea;
 }
 
-.fss__count {
-    font-variant-numeric: tabular-nums;
-    font-size: 0.8rem;
-    letter-spacing: 0.08em;
-    opacity: 0.85;
-    white-space: nowrap;
-}
-
-.fss__count em {
-    font-style: normal;
-    opacity: 0.5;
-    margin: 0 2px;
-}
-
-.fss__dashes {
-    flex: 1;
+/* puntos de navegación al estilo carousel__navigation-button,
+   con un relleno circular temporizado (autoplay) en vez de barra */
+.fss__dots {
     display: flex;
-    gap: 8px;
-}
-
-.fss__dash {
-    position: relative;
-    flex: 1;
-    height: 3px;
-    background: rgba(244, 241, 234, 0.28);
-    border: none;
-    padding: 0;
-    cursor: pointer;
-    overflow: hidden;
-}
-
-.fss__dashFill {
-    position: absolute;
-    inset: 0;
-    transform: scaleX(0);
-    transform-origin: left;
-    background: #f4f1ea;
-}
-
-.fss__dash.is-active .fss__dashFill {
-    animation: fss-fill var(--dash-dur, 6000ms) linear forwards;
-}
-
-@keyframes fss-fill {
-    from {
-        transform: scaleX(0);
-    }
-
-    to {
-        transform: scaleX(1);
-    }
-}
-
-.fss__arrows {
-    display: flex;
+    align-items: center;
     gap: 12px;
 }
 
-.fss__arrow {
-    width: 40px;
-    height: 40px;
+.fss__dot {
+    position: relative;
+    width: 10px;
+    height: 10px;
     border-radius: 50%;
-    border: 1px solid rgba(244, 241, 234, 0.4);
-    background: transparent;
-    color: #f4f1ea;
-    font-size: 1rem;
+    border: none;
+    padding: 0;
+    background-color: rgba(244, 241, 234, 0.3);
     cursor: pointer;
-    transition: background 0.2s ease, border-color 0.2s ease;
+    overflow: hidden;
+    transition: transform 0.25s ease, background-color 0.25s ease;
 }
 
-.fss__arrow:hover {
-    background: rgba(244, 241, 234, 0.12);
-    border-color: rgba(244, 241, 234, 0.8);
+.fss__dot:hover {
+    transform: scale(1.35);
+    background-color: rgba(244, 241, 234, 0.5);
 }
 
-.fss__arrow:focus-visible,
-.fss__dash:focus-visible {
-    outline: 2px solid #f4f1ea;
-    outline-offset: 2px;
+.fss__dot.is-active {
+    transform: scale(1.35);
+    background-color: rgba(244, 241, 234, 0.3);
+}
+
+.fss__dotRing {
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background: #f4f1ea;
+    transform: scale(0);
+    transform-origin: center;
+}
+
+.fss__dot.is-active .fss__dotRing {
+    animation: fss-dot-fill var(--dash-dur, 6000ms) linear forwards;
+}
+
+@keyframes fss-dot-fill {
+    from {
+        transform: scale(0);
+    }
+
+    to {
+        transform: scale(1);
+    }
 }
 
 @media (max-width: 640px) {
-    .fss__ui {
-        gap: 14px;
+    .fss__arrow {
+        width: 44px;
+        height: 44px;
+        background-size: 13px 13px;
     }
 
     .fss__count {
         display: none;
+    }
+
+    .fss__ui {
+        gap: 14px;
     }
 }
 
 @media (prefers-reduced-motion: reduce) {
 
     .fss__img,
-    .fss__slide {
+    .fss__slide,
+    .fss__dot,
+    .fss__arrow {
         transition: none;
     }
 
-    .fss__dashFill {
+    .fss__dotRing {
         animation: none;
     }
 }

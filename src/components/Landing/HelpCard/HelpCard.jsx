@@ -1,4 +1,4 @@
-import React from "react";
+import { Link } from "react-router-dom";
 
 /**
  * `titlePosition` alterna entre "top" y "bottom" para crear el efecto
@@ -6,7 +6,7 @@ import React from "react";
  */
 export default function HelpCard({ image, title, href, titlePosition }) {
   return (
-    <a href={href} className={`help-card help-card--title-${titlePosition}`}>
+    <Link to={href} className={`help-card help-card--title-${titlePosition}`}>
       {titlePosition === "top" && <span className="help-card__title">{title}</span>}
 
       <div className="help-card__image-wrap">
@@ -14,6 +14,6 @@ export default function HelpCard({ image, title, href, titlePosition }) {
       </div>
 
       {titlePosition === "bottom" && <span className="help-card__title">{title}</span>}
-    </a>
+    </Link>
   );
 }

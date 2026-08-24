@@ -1,4 +1,4 @@
-import { BlobFrame, Footer, FormToMail, Navbar } from "../components/General"
+import { BlobFrame, Footer, FormToMail, Navbar } from "../components"
 
 import { BLOB_PATH_A, GOOGLE_MAPS_UBICATION } from "../data"
 
@@ -9,7 +9,7 @@ const ContactUsPage = () => {
         <>
             <Navbar />
             <section className="contact-us-page">
-                <FormToMail title="Escríbenos" responseType="Contacto" forceType={true} onSuccess={() => { }} />
+                <FormToMail title="Escríbenos" responseType="Contacto" forceType={false} onSuccess={() => { }} />
                 <BlobFrame blobPath={BLOB_PATH_A}>
                     <iframe src={GOOGLE_MAPS_UBICATION} title="Ubicación" />
                 </BlobFrame>

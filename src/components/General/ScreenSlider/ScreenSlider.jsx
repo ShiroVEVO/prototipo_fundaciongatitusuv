@@ -3,21 +3,9 @@ import { useState, useEffect, useRef, useCallback } from "react";
 import { SLIDER_ITEMS } from "../../../data";
 
 import "./ScreenSlider.css";
-/**
- * Slider fullscreen de fotos con info posicionable.
- *
- * Cada item del arreglo/JSON debe tener esta forma:
- * {
- *   "image": "https://...",
- *   "title": "Título de la foto",
- *   "info": "Texto corto descriptivo",
- *   "position": "center" | "bottom-left" | "bottom-right"
- * }
- *
- * Props:
- * - items: array de items (ver forma arriba). Si no se pasa, usa un demo de 4.
- * - autoPlayMs: intervalo de autoplay en ms (default 6000, 0 = desactivado)
- */
+
+
+
 export default function ScreenSlider({ items = SLIDER_ITEMS, autoPlayMs = 6000 }) {
     const [index, setIndex] = useState(0);
     const [paused, setPaused] = useState(false);
@@ -74,33 +62,23 @@ export default function ScreenSlider({ items = SLIDER_ITEMS, autoPlayMs = 6000 }
                 </figure>
             ))}
 
-            <div className="fss__ui">
-                <span className="fss__count">
-                    {pad(index)} <em>/</em> {pad(total - 1)}
-                </span>
+            <button className="fss__arrow fss__arrow--prev" onClick={prev} aria-label="Foto anterior" />
+            <button className="fss__arrow fss__arrow--next" onClick={next} aria-label="Foto siguiente" />
 
-                <div className="fss__dashes">
+            <div className="fss__ui">
+                <div className="fss__dots">
                     {items.map((_, i) => (
                         <button
                             key={i}
-                            className={`fss__dash ${i === index ? "is-active" : ""}`}
+                            className={`fss__dot ${i === index ? "is-active" : ""}`}
                             onClick={() => goTo(i)}
                             aria-label={`Ir a la foto ${i + 1}`}
                             aria-current={i === index}
                             style={autoPlayMs ? { "--dash-dur": `${autoPlayMs}ms` } : undefined}
                         >
-                            <span className="fss__dashFill" />
+                            <span className="fss__dotRing" />
                         </button>
                     ))}
-                </div>
-
-                <div className="fss__arrows">
-                    <button className="fss__arrow" onClick={prev} aria-label="Foto anterior">
-                        ←
-                    </button>
-                    <button className="fss__arrow" onClick={next} aria-label="Foto siguiente">
-                        →
-                    </button>
                 </div>
             </div>
         </div>

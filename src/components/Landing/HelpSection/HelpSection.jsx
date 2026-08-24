@@ -1,16 +1,17 @@
-import React from "react";
-import HelpCard from "./HelpCard";
+import { HelpCard } from "../../../components"
+
+import "./HelpSection.css"
 
 const WAYS_TO_HELP = [
   {
     title: "Apadrinar",
-    href: "/apadrinar",
+    href: "/apadrina",
     image: `img/Sponsorship.jpg`,
     titlePosition: "bottom",
   },
   {
     title: "Donaciones",
-    href: "/donar",
+    href: "/dona",
     image: `img/Donation.jpg`,
     titlePosition: "top",
   },

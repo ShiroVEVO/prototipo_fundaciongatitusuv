@@ -1,0 +1,28 @@
+.sponsor-cards {
+    background: var(--color-page-bg);
+    font-family: var(--font-body);
+    padding: var(--space-xl) var(--space-md);
+    padding-top: 7em;
+    box-sizing: border-box;
+}
+
+.sponsor-cards *,
+.sponsor-cards *::before,
+.sponsor-cards *::after {
+    box-sizing: border-box;
+}
+
+.sponsor-cards__grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--space-lg);
+    max-width: var(--page-max-width);
+    margin: 0 auto;
+    align-items: stretch;
+}
+
+.tier-card {
+    flex: 1 1 var(--card-min-width);
+    max-width: 340px;
+}

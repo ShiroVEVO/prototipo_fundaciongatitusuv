@@ -1,14 +1,14 @@
-import { Link } from "react-router-dom";
+import "./Hero.css"
 
 /**
  * Banner principal a pantalla completa.
  * Muestra un video en loop (con imagen de respaldo si el navegador no puede reproducirlo
  * o mientras carga).
  */
-const VIDEO_SRC = "video/videoLanding.mp4";
-const POSTER_SRC = "img/backgroundExample.jpg";
+// const VIDEO_SRC = "video/videoLanding.mp4";
+// const POSTER_SRC = "img/backgroundExample.jpg";
 
-export default function Hero() {
+export default function Hero({ eyebrow, title, subtitle, VIDEO_SRC, POSTER_SRC, children }) {
   return (
     <header className="hero">
       <video
@@ -25,26 +25,19 @@ export default function Hero() {
       <div className="hero__overlay" aria-hidden="true" />
 
       <div className="hero__content">
-        <p className="hero__eyebrow">Catfeteria · Refugio · Adopción</p>
+        <p className="hero__eyebrow">{eyebrow}</p>
         <h1 className="hero__title">
-          Donde cada maullido encuentra esperanza
-          <br />
-          y cada rescate tiene un nuevo comienzo
+          {title}
         </h1>
         <p className="hero__subtitle">
-          Un hogar de paso, una taza de café y un gatito esperando encontrarte.
+          {subtitle}
         </p>
         <div className="hero__actions">
-          <Link to="/adopta" className="btn btn--primary">
-            Quiero adoptar
-          </Link>
-          <Link to="/catfeteria" className="btn btn--ghost">
-            Conoce el café
-          </Link>
+          {children}
         </div>
       </div>
 
-      <a href="#rescate" className="hero__scroll" aria-label="Bajar a la siguiente sección">
+      <a className="hero__scroll" aria-label="Bajar a la siguiente sección">
         <span />
       </a>
     </header>

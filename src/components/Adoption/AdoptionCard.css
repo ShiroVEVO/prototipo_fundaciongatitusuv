@@ -9,13 +9,10 @@
   --gc-ink-soft: #6b6153;
   --gc-moss: #5e7351;
   --gc-moss-dark: #465a3f;
-  --gc-rust: #bf5b2e;
+  --gc-rust: #4797d8;
   --gc-mustard: #e0a13b;
   --gc-paper-shadow: 0 18px 40px -18px rgba(44, 37, 25, 0.45);
   --gc-radius: 22px;
-  --gc-font-display: "Fraunces", "Georgia", serif;
-  --gc-font-body: "Work Sans", "Helvetica Neue", sans-serif;
-  --gc-font-mono: "IBM Plex Mono", "Courier New", monospace;
 }
 
 /* ---------- contenedor de galería (opcional, solo para demo) ---------- */
@@ -90,7 +87,7 @@
 .gato-card__stamp {
   position: absolute;
   top: 14px;
-  right: -34px;
+  right: -15px;
   z-index: 3;
   transform: rotate(9deg);
   background: var(--gc-rust);

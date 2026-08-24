@@ -1,9 +1,10 @@
-import StatsCounter from "./StatsCounter";
-import CatCard from "./CatCard";
+import { Link } from "react-router-dom";
 
-import { InfiniteCarousel } from "./General";
+import { InfiniteCarousel, StatsCounter, CatCard } from "../../../components"
 
-import { CATS } from "../data";
+import { CATS } from "../../../data";
+
+import "./RescueSection.css"
 
 export default function RescueSection() {
   return (
@@ -22,9 +23,9 @@ export default function RescueSection() {
 
         <div className="rescue__carousel-header">
           <h3>Buscan un hogar</h3>
-          <a href="/adopciones" className="link-arrow">
+          <Link to="/adopta" className="link-arrow">
             Ver todos los adoptables →
-          </a>
+          </Link>
         </div>
 
         <InfiniteCarousel

@@ -1,6 +1,4 @@
-import { Navbar, Footer, Catalog, ParallaxSection, ScreenSlider, InfiniteCarousel } from "../components/General"
-
-import MealCard from "../components/MealCard";
+import { Navbar, Footer, Catalog, ParallaxSection, ScreenSlider, InfiniteCarousel, MealCard } from "../components"
 
 import { PRODUCTS } from "../data";
 

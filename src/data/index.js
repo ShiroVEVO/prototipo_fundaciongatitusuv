@@ -11,3 +11,4 @@ export { default as SLIDER_ITEMS } from "./SliderItems";
 export { GENERAL_BENEFITS, DEFAULT_TIERS } from "./sponsorTiers"
 export { default as VOLUNTEERING_TYPES } from "./volunteeringTypes"
 export { default as DONATION_TYPES } from "./donationTypes"
+export { default as PAYMENT_METHODS } from "./paymentMethods"
