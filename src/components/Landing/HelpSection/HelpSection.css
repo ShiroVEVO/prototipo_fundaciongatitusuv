@@ -61,3 +61,33 @@
 .help-card:hover .help-card__image {
     transform: scale(1.05);
 }
+
+@media (max-width: 900px) {
+    .help__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .help-card {
+        border-bottom: 1px solid rgba(246, 239, 228, 0.08);
+    }
+
+    .help-card__title {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 560px) {
+    .help__grid {
+        grid-template-columns: 1fr;
+    }
+
+    .help-card__title {
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 480px) {
+    .help-card__title {
+        font-size: 0.8em;
+    }
+}

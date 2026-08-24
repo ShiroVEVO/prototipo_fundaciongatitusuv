@@ -131,24 +131,12 @@ a {
     padding: 3rem 1.75rem;
   }
 
-  .help__grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .help-card {
-    border-bottom: 1px solid rgba(246, 239, 228, 0.08);
-  }
-
   .footer {
     grid-template-columns: 1fr 1fr;
   }
 }
 
 @media (max-width: 560px) {
-  .help__grid {
-    grid-template-columns: 1fr;
-  }
-
   .footer {
     grid-template-columns: 1fr;
   }
