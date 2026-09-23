@@ -10,6 +10,7 @@ import AdoptionPage from "./Pages/AdoptionPage.jsx";
 import DonationPage from "./Pages/DonationPage.jsx"
 import { HashRouter, Route, Routes } from "react-router-dom";
 import AdoptionFormPage from "./Pages/AdoptionFormPage.jsx";
+import BookingPage from "./Pages/BookingPage.jsx";
 
 
 export default function App() {
@@ -28,6 +29,7 @@ export default function App() {
         <Route path="/formulario-adopcion" element={<AdoptionFormPage />} />
         <Route path="/nosotros" element={<AboutUsPage />} />
         <Route path="/contacto" element={<ContactUsPage />} />
+        <Route path="/reserva" element={<BookingPage />} />
       </Routes>
     </HashRouter>
   );

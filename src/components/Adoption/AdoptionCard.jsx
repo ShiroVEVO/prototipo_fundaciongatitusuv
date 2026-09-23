@@ -141,7 +141,7 @@ export default function AdoptionCard({ cat }) {
             <div className="gato-card__front">
                 <img
                     className="gato-card__img"
-                    src={photo}
+                    src={import.meta.env.BASE_URL + photo}
                     alt={`${name}, ${age}`}
                     loading="lazy"
                 />

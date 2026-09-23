@@ -1,0 +1,32 @@
+/* Contenedor general del componente: separación desde arriba */
+.gcal-scheduler-wrapper {
+    margin-top: 15vh !important;
+    width: 60vw !important;
+    max-width: 60vw !important;
+}
+
+/* Caja que envuelve el iframe (borde, radio, alto) */
+.gcal-scheduler-frame {
+    width: 100% !important;
+    height: 90vh !important;
+}
+
+/* El iframe en sí: ocupa el 100% de su contenedor, que ya mide 60vw x 45vh */
+.gcal-scheduler-iframe {
+    width: 100% !important;
+    height: 100% !important;
+    border: none;
+}
+
+@media (max-width: 640px) {
+    .gcal-scheduler-wrapper {
+        width: 90vw !important;
+        max-width: 90vw !important;
+        margin-top: 8vh !important;
+        height: auto !important;
+    }
+
+    .gcal-scheduler-frame {
+        height: 140vh !important;
+    }
+}

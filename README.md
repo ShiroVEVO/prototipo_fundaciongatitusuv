@@ -37,10 +37,4 @@ src/
 - **Enlaces internos** (`/hogar-de-paso`, `/voluntariado`, `/donar`, `/apadrinar`): si usas react-router, cambia las etiquetas `<a>` por `<Link>` de `react-router-dom`.
 - **Cifras de impacto**: ajusta los `value` en `RescueSection.jsx`.
 
-## Paleta y tipografía
 
-- Fondo: café espresso (`--espresso-900`), no crema — evita el look genérico de fondo claro + acento terracota.
-- Acento: naranja jengibre (`--ginger-500`), como el pelaje de un gato atigrado.
-- Secundario: verde salvia (`--sage-400`) para las edades y detalles de calma.
-- Cifras: dorado (`--gold-400`) en `Space Mono`, para que los números de impacto resalten.
-- Tipografía: `Fraunces` (display, con itálicas para la frase de la cafetería) + `Plus Jakarta Sans` (cuerpo) + `Space Mono` (datos y etiquetas).
